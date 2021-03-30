@@ -10,7 +10,7 @@ Django==3.0.6
 gmane==0.1.dev25
 idna==2.9
 kiwisolver==1.2.0
-lxml==4.5.1
+lxml==4.6.3
 matplotlib==3.2.1
 networkx==2.4
 numpy==1.18.4
