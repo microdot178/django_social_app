@@ -1,0 +1,22 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/page.css' %}">
+<body>
+{% if not user.is_authenticated %}
+<but3><a href="{% url 'social:begin' 'vk-oauth2' %}" class="buttonlogin">with VK</a></but3>
+<but><a href="/login" class="buttonlogin"/>Log in</a></but>
+{% endif %}
+{% if user.is_authenticated %}
+<but2><a href="/logout" class="buttonlogin"/>Logout</a></but2>
+{% endif %}
+{% block content %}
+{% endblock %}
+ <div class='messages'>
+	{% for post in posts reversed %}
+		<div>
+		<author>{{ post.author }} :</author>
+		<h>{{ post.text|linebreaksbr }}</h>
+		<div>
+	{% endfor %}
+ </div>
+<script src="{% static 'js/main.js' %}"></script>
+</body>

@@ -1,0 +1,19 @@
+{% extends 'page/page.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+<link rel="stylesheet" href="{% static 'css/page.css' %}">
+{% block content %}
+{% if user.is_authenticated %}
+    <div id="messages">
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.text|add_class:"css_class_1 form_class_2" }}
+        <p><button type="submit" class="save btn btn-default">go</button></p>
+    </form>
+
+{% endif %}
+{% endblock %}
+    </div>
+
+
